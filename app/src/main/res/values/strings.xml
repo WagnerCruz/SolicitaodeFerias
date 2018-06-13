@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Solicitação de Férias</string>
+    <string name="lbl_autor">Autor:</string>
+    <string name="lbl_data">Data:</string>
+    <string name="lbl_status">Status:</string>
+    <string name="lbl_solicitante">Solicitante</string>
+</resources>
