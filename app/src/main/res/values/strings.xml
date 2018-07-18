@@ -4,4 +4,5 @@
     <string name="lbl_data">Data:</string>
     <string name="lbl_status">Status:</string>
     <string name="lbl_solicitante">Solicitante</string>
+    <string name="endereco_teste">http://pokeapi.co/api/v2/pokemon/1/</string>
 </resources>
