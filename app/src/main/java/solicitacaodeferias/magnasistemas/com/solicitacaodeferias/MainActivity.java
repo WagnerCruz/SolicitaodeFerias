@@ -5,9 +5,9 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -21,9 +21,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Calendar;
+
+import solicitacaodeferias.magnasistemas.com.solicitacaodeferias.chamadasasynctaskws.AsyncCallBasicAuthentication;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -118,8 +119,27 @@ public class MainActivity extends AppCompatActivity {
         botao_ws.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String valores = chamarws();
-                alerta("Teste",valores);
+//                String valores = chamarws();
+//                alerta("Teste",valores);
+
+//                AsyncCallBasicAuthentication autenticacao = (AsyncCallBasicAuthentication) new AsyncCallBasicAuthentication(new AsyncCallBasicAuthentication.AsyncResponse() {
+//                    @Override
+//                    public void processFinish(String result) {
+//
+
+                AsyncCallBasicAuthentication autenticacao = (AsyncCallBasicAuthentication) new AsyncCallBasicAuthentication(new AsyncCallBasicAuthentication.AsyncResponse() {
+                    @Override
+                    public void processFinish(String result) {
+
+                        if (result == "") {
+                            Toast.makeText(MainActivity.this, "Conectado", Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            Toast.makeText(MainActivity.this, "Não Conectado", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+                }).execute("wcruz","1354265");
             }
         });
 
